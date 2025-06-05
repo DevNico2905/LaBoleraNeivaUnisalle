@@ -1,0 +1,41 @@
+<div class="score-modal container" [class.show]="modalService.openScoreModal">
+  <div class="modal-header">
+    <h2>Puntuación del Juego</h2>
+  </div>
+  
+  <div class="players-container">
+    <div *ngFor="let player of players" class="player-card">
+      <h3>{{ player.name }}</h3>
+      
+      <table>
+        <thead>
+          <tr>
+            <th *ngFor="let frame of [1,2,3,4,5]">Frame {{ frame }}</th>
+            <th>Total</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td *ngFor="let frame of player.frames; let i = index">
+              <div class="frame-inputs">
+                <input type="number" min="0" max="10" 
+                       [(ngModel)]="frame.attempt1"
+                       #attempt1Input (change)="updateScore(player, i, 1, attempt1Input.value)">
+                <input type="number" min="0" [max]="10 - frame.attempt1" 
+                       [(ngModel)]="frame.attempt2"
+                       #attempt2Input (change)="updateScore(player, i, 2, attempt2Input.value)">
+              </div>
+              <div class="frame-total">{{ frame.total || 0 }}</div>
+            </td>
+            <td class="total-score">{{ player.totalScore }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="modal-actions">
+    <button class="modal-button" (click)="saveScores()">Guardar</button>
+    <button class="modal-button cancel" (click)="modalService.closeScoreModal()">Cerrar</button>
+  </div>
+</div>

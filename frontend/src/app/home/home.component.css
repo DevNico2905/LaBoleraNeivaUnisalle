@@ -1,0 +1,286 @@
+
+body{
+    display: flex;
+    align-items: center;
+}
+
+#clock {
+    position: absolute;
+    top: 35px;
+    right: 40px;
+    font-size: 2.5rem;
+    font-family: 'Montserrat', Arial, sans-serif;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); 
+    padding: 0; 
+}
+
+.sidebar{
+    background-color:white;
+    width: max-content;
+    border-radius: 0px 10px 10px 0px;
+    padding: 2rem 1rem;
+}
+
+.sidebar:hover .sidebar__element{
+    grid-template-columns: 40px 1fr;
+}
+
+.sidebar__list{
+    list-style: none;
+    padding: 0;
+    min-height: 600px;
+    display: flex;
+    flex-direction: column;
+    gap: .4rem;
+}
+
+.sidebar__element{
+    padding: .8rem 1.3rem;
+    border-radius: 15px;
+    display: grid;
+    align-items: center;
+    grid-template-columns: 40px 0fr;
+    color: #526581;
+    fill: #8491a5;
+    transition: grid-template-columns .4s;
+}
+
+.sidebar__element:not(:has(.sidebar__icon--logo)):hover{
+    background-color: #007aff;
+    color: white;
+    fill: white;
+    cursor: pointer;
+}
+
+.sidebar__element:has(.sidebar__icon--logo){
+    margin-bottom: 1rem;
+}
+
+.sidebar__icon{
+    width: 100%;
+    overflow: hidden;
+    justify-self: center;
+}
+
+.sidebar__icon--logo{
+     max-width: 40px;
+}
+
+.sidebar__logo{
+    max-width: 75px;
+    text-wrap: nowrap;
+    margin-left: .1rem;
+}
+
+.sidebar__text{
+    font-family: Poppins;
+    text-wrap: nowrap;
+}
+
+.sidebar__logo, .sidebar__text{
+    padding-left: 1.3rem;
+}
+
+.sidebar__hide{
+    overflow: hidden;
+}
+
+.sidebar__element--out{
+    margin-top: auto;
+}
+
+a{
+    text-decoration: none;
+}
+
+/*
+.NewGameModal{
+    background-color: #e5e9ef;
+    width: 60%;
+    height: 600px;
+    margin: auto;
+    padding: 10px; 
+    border-radius: 2.5%;
+    display: none;
+}*/
+
+.selecciona-players{
+    height: 20%;
+    background-color: #e5e9ef;
+}
+ 
+.name-player{
+    height: 70%;
+    background-color: #e5e9ef;
+    border-radius: 15px;
+    margin-left: 2%;
+    margin-right: 2%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    box-sizing: border-box;
+    padding: 2% 7% 2% 7%;
+}
+
+.botones-modal{
+    height: 10%;
+    background-color: #e5e9ef;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.modal-buttons{
+    background-color:white;
+    /*padding: 5px 10px;*/
+    height: 40px;
+    width: 100px;
+    /*border-color: grey;*/
+    border-width: 0px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-family: 'Poppins';
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #526581;
+}
+
+.cancel{
+    margin-left: 40px;
+}
+
+.aplied{
+    margin-right: 40px;
+}
+
+.modal-buttons:hover {
+    background-color: #007aff;
+    color: white;
+    fill: white;
+    cursor: pointer;
+    border-width: 0px;
+}
+
+/**/
+
+.NewGameModal {
+    background-color: #e5e9ef;
+    width: 60%;
+    height: 600px;
+    margin: auto;
+    padding: 10px; 
+    border-radius: 2.5%;
+    max-height: 600px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.NewGameModal.show {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.title-div{
+    height: 50%;
+    background-color: #e5e9ef;
+    display: flex;
+}
+
+.numero-players {
+    display: flex;
+    justify-content: space-between; /* Espacio proporcional */
+    align-items: center; /* Centra verticalmente */
+    height: 50%;
+    padding-left: 20%;
+    padding-right: 20%;
+}
+
+.opcion {
+    height: 50px;
+    width:  50px;
+    background-color: white;
+    border: none; /* Elimina el borde predeterminado del botón */
+    border-radius: 50%; /* Opcional, para que sean circulares */
+    cursor: pointer; /* Cambia el cursor al pasar por encima */
+    display: flex; /* Centra el contenido dentro */
+    justify-content: center;
+    align-items: center;
+    color: #526581; /* Color del texto */
+    font-size: 1.5rem; /* Tamaño del texto */
+    font-family: 'Poppins';
+}
+
+.opcion.selected {
+    background-color: #007aff;
+    color: white;
+}
+
+.title-players{
+    margin: auto;
+    font-family: 'Poppins';
+    font-size: 1.8rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #526581;
+}
+
+.div-name-players{
+    width: 100%;
+    height: 12.5%;
+    background-color: white;
+    border-width: 0.5px;
+    border-radius: 15px;
+    margin: 7.5px 0px 7.5px 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+}
+
+.input-names{
+    width: 90%;
+    height: 85%;
+    padding: 0;
+    font-family: 'Poppins';
+    font-size: 2rem;
+    color: #526581;
+    
+}
+
+.input-names {
+    border: none; /* Elimina el borde por defecto */
+    outline: none; /* Elimina el borde de enfoque */
+  }
+  
+  .input-names:hover,
+  .input-names:focus {
+    border: none; /* Asegura que no aparezca borde al hacer hover o al enfocar */
+    outline: none; /* También elimina el borde al enfocar */
+}
+
+.th-d-n, .fo-d-n, .fi-d-n, .s-d-n {
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.showDivName{
+    opacity: 1;
+    pointer-events: all;
+}
+
+.container {
+  background-image: url('../../assets/images/default-background.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh; /* Altura completa de la ventana */
+  display: flex;
+  align-items: center;
+}

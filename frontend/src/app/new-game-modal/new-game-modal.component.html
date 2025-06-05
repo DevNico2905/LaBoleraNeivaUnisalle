@@ -1,0 +1,60 @@
+<div class="NewGameModal" [class.show]="showModal">
+    <!-- Seleccionar número de jugadores -->
+    <div class="selecciona-players divs-modal">
+        <div class="title-div">
+            <p class="title-players">¿Cuántos jugadores son?</p>
+        </div>
+        <div class="numero-players">
+            <button class="opcion" #radioButton data-value="2-p">2</button>
+            <button class="opcion" #radioButton data-value="3-p">3</button>
+            <button class="opcion" #radioButton data-value="4-p">4</button>
+            <button class="opcion" #radioButton data-value="5-p">5</button>
+            <button class="opcion" #radioButton data-value="6-p">6</button>
+        </div>            
+    </div>
+    
+    <!-- Escribir nombres de jugadores -->
+    <div class="name-player divs-modal">
+        <div class="div-name-players o-d-n" id="div-name-one">
+            <input type="text" class="input-names" id="i-n-one" placeholder="Jugador 1" required>
+        </div>
+        <div class="div-name-players tw-d-n" id="div-name-two">
+            <input type="text" class="input-names" id="i-n-two" placeholder="Jugador 2" required>
+        </div>
+        <div class="div-name-players th-d-n" id="div-name-three">
+            <input type="text" class="input-names" id="i-n-three" placeholder="Jugador 3">
+        </div>  
+        <div class="div-name-players fo-d-n" id="div-name-four">
+            <input type="text" class="input-names" id="i-n-four" placeholder="Jugador 4">
+        </div>
+        <div class="div-name-players fi-d-n" id="div-name-five">
+            <input type="text" class="input-names" id="i-n-five" placeholder="Jugador 5">
+        </div>
+        <div class="div-name-players s-d-n" id="div-name-six">
+            <input type="text" class="input-names" id="i-n-six" placeholder="Jugador 6">
+        </div>
+    </div>
+    
+    <!-- Agregar mensajes de estado -->
+    <div class="message-container">
+        <div *ngIf="errorMessage" class="error-message">
+            {{ errorMessage }}
+        </div>
+        <div *ngIf="successMessage" class="success-message">
+            {{ successMessage }}
+        </div>
+    </div>
+
+    <!-- Botones Modal -->
+    <div class="botones-modal divs-modal">
+        <button class="modal-buttons cancel" (click)="hideNewGameModal()">
+            Cancelar
+        </button>
+        <button class="modal-buttons aplied" 
+            (click)="startGame()"
+            [disabled]="isSaving">
+            <span *ngIf="!isSaving">¡Jugar!</span>
+            <span *ngIf="isSaving">Guardando...</span>
+        </button>
+    </div>
+</div>
