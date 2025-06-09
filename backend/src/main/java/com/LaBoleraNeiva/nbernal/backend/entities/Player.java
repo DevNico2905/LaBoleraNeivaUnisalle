@@ -29,5 +29,8 @@ public class Player {
     @Column(nullable = false, length = 36)
     private String gameId; // Este es el UUID de la partida
 
+    @Column(nullable = true)
+    private int finalScore;
+
 }
 

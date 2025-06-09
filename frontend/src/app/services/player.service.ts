@@ -6,6 +6,8 @@ interface Player {
   id?: number;
   name: string;
   gameId: string;
+  finalScore?: number;
+
 }
 
 @Injectable({
