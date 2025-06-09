@@ -142,7 +142,7 @@
     outline: none;
 }
 
-.th-d-n, .fo-d-n, .fi-d-n, .s-d-n {
+.tw-d-n, .th-d-n, .fo-d-n, .fi-d-n, .s-d-n {
     opacity: 0;
     pointer-events: none;
     height: 0;
