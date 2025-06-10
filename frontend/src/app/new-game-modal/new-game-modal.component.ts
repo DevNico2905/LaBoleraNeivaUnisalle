@@ -100,12 +100,13 @@ export class NewGameModalComponent implements OnInit {
         this.modalService.setPlayers(playerNames, playerCount);
         
         setTimeout(() => {
-          this.hideNewGameModal();
+          this.modalService.closeModal();
+          this.router.navigate(['home/score-modal']);
         }, 1500);
 
-        this.router.navigate(['/score-modal']);
+        
 
-        this.modalService.openScoreModal();
+        //this.modalService.openScoreModal();
       },
       error: (err) => {
         this.errorMessage = 'Error al guardar la partida. Por favor, intenta nuevamente.';

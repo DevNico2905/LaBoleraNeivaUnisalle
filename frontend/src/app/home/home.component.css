@@ -302,7 +302,7 @@ a{
 .main-content {
   flex: 1; /* Ocupa el espacio restante */
   padding: 20px;
-  min-height: 600px;
+  min-height: 700px;
   height: 100%;
   width: 100%;
   box-sizing: border-box;
