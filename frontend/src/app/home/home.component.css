@@ -1,3 +1,13 @@
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+  .sidebar {
+    width: 100%;
+    height: auto;
+    border-radius: 0;
+  }
+}
 
 body{
     display: flex;
@@ -20,6 +30,10 @@ body{
     width: max-content;
     border-radius: 0px 10px 10px 0px;
     padding: 2rem 1rem;
+    position: sticky; /* Fijo al hacer scroll */
+    top: 0;
+    left: 0;
+    z-index: 100;
 }
 
 .sidebar:hover .sidebar__element{
@@ -283,4 +297,13 @@ a{
   min-height: 100vh; /* Altura completa de la ventana */
   display: flex;
   align-items: center;
+}
+
+.main-content {
+  flex: 1; /* Ocupa el espacio restante */
+  padding: 20px;
+  min-height: 600px;
+  height: 100%;
+  width: 100%;
+  box-sizing: border-box;
 }

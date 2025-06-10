@@ -117,6 +117,7 @@ export class NewGameModalComponent implements OnInit {
 
   hideNewGameModal(): void {
     this.modalService.closeModal();
+    this.router.navigate([''])
   }
 
   private resetForm(): void {
@@ -146,13 +147,19 @@ export class NewGameModalComponent implements OnInit {
     return names[num - 1] || '';
   }
 
+  /*
   private clearInputs(): void {
     const inputs = this.elRef.nativeElement.querySelectorAll("input[type='text']") as NodeListOf<HTMLInputElement>;
+    inputs.forEach(input => input.value = '');
+  } */
+
+  private clearInputs(): void {
+    const inputs = this.elRef.nativeElement.querySelectorAll('.input-names') as NodeListOf<HTMLInputElement>;
     inputs.forEach(input => input.value = '');
   }
 
   private resetSelection(): void {
-    this.radioButtons.forEach(button => {
+    this.radioButtons?.forEach(button => {
       button.nativeElement.classList.remove('selected');
     });
   }
