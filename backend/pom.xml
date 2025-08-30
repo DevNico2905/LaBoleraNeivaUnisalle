@@ -70,6 +70,13 @@
 			<artifactId>hibernate-validator</artifactId>
 		</dependency>
 
+		<!-- I have changed the database server, from MySQL to PostgreSQL-->
+		<dependency>
+			<groupId>org.postgresql</groupId>
+			<artifactId>postgresql</artifactId>
+			<scope>runtime</scope>
+		</dependency>
+
 	</dependencies>
 
 	<build>
